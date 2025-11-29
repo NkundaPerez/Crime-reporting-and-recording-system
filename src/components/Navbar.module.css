@@ -1,0 +1,166 @@
+.navbar {
+  background: #1a3a5f;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navLink {
+  color: #d0e0ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.active {
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #4da6ff;
+  border-radius: 2px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userName {
+  font-size: 0.95rem;
+  color: #d0e0ff;
+}
+
+.logoutBtn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #c82333;
+}
+
+/* Mobile Toggle */
+.mobileToggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  background: #1a3a5f;
+  border-top: 1px solid #2c5480;
+  padding: 1rem 0;
+}
+
+.mobileMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileLink {
+  display: block;
+  padding: 0.8rem 2rem;
+  color: #d0e0ff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.mobileLink:hover,
+.mobileLink.active {
+  background: #2c5480;
+  color: white;
+}
+
+.mobileLogout {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navList,
+  .userInfo {
+    display: none;
+  }
+
+  .mobileToggle {
+    display: flex;
+  }
+
+  .container {
+    height: 56px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,222 @@
+/* src/pages/Reports.module.css */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.header h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+.addBtn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.addBtn:hover { background: #1d4ed8; }
+
+/* ---------- Filters ---------- */
+.filters {
+  margin-bottom: 1rem;
+}
+.filterSelect {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  min-width: 240px;
+}
+
+/* ---------- Table ---------- */
+.tableWrapper {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.table th {
+  background: #f1f5f9;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+}
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+.table tr:hover { background: #f8fafc; }
+
+/* ---------- Status Badges ---------- */
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.statusBadge.draft     { background: #fef3c7; color: #92400e; }
+.statusBadge.submitted { background: #dbeafe; color: #1e40af; }
+.statusBadge.approved  { background: #d1fae5; color: #065f46; }
+
+/* ---------- Action Buttons ---------- */
+.actionsCell {
+  white-space: nowrap;
+}
+.viewBtn,
+.editBtn,
+.addBtn,
+.deleteBtn,
+.closeBtn {
+  margin-right: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.viewBtn   { background: #e2e8f0; color: #475569; }
+.viewBtn:hover   { background: #cbd5e1; }
+.editBtn   { background: #fbbf24; color: white; }
+.editBtn:hover   { background: #f59e0b; }
+.addBtn    { background: #10b981; color: white; }
+.addBtn:hover    { background: #059669; }
+.deleteBtn { background: #ef4444; color: white; }
+.deleteBtn:hover { background: #dc2626; }
+.closeBtn  { background: #6b7280; color: white; }
+.closeBtn:hover  { background: #4b5563; }
+
+/* ---------- Inline Edit ---------- */
+.input,
+.statusSelect,
+.textarea,
+.fileInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.statusSelect { padding: 0.4rem; }
+
+/* ---------- Pagination ---------- */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.pageBtn {
+  background: #f1f5f9;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pageBtn:disabled { background: #e2e8f0; cursor: not-allowed; }
+.pageInfo { font-weight: 500; color: #475569; }
+
+/* ---------- Loading / Empty ---------- */
+.loading,
+.noData {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ---------- Modals ---------- */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal,
+.modalWide {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 560px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.modalWide { max-width: 800px; }
+.modal h3,
+.modalWide h3 { margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem; }
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.modalActions button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.modalActions button:first-child { background: #e2e8f0; color: #475569; }
+.modalActions button:last-child { background: #2563eb; color: white; }
+
+/* ---------- File List & Preview ---------- */
+.fileList { list-style: none; padding: 0; margin: 0; }
+.fileList li { margin-bottom: 1rem; }
+.fileList a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.previewImg {
+  max-width: 300px;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+/* Sticky Footer Layout */
+.appWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1; /* This pushes the footer down */
+  padding-bottom: 2rem; /* Optional: space above footer */
+}
+
+.footer {
+  margin-top: auto;
+  background: #1e293b;
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
